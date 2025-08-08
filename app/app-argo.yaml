@@ -10,8 +10,8 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: https://github.com/stdedwin-git/poc-version-trace.git   # <- Windows usa / o \
-    targetRevision: HEAD
+    repoURL: https://github.com/stdedwin-git/poc-version-trace   # <- Windows usa / o \
+    targetRevision: main
     path: base
     kustomize: {}
   syncPolicy:
