@@ -1,0 +1,27 @@
+# START GENAI
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app.kubernetes.io/name: frontend
+    # El label de versión se sobreescribe en el overlay
+    app.kubernetes.io/version: "1.26.0"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: frontend
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: frontend
+        app.kubernetes.io/version: "x.y.z"
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:x.y.z        # tag reemplazado por overlay
+        ports:
+        - containerPort: 80
+
+# END GENAI

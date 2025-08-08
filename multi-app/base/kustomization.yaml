@@ -1,0 +1,10 @@
+# START GENAI
+resources:
+  - frontend-deploy.yaml
+  - backend-deploy.yaml
+  - db-deploy.yaml
+  - services.yaml
+commonLabels:
+  app.kubernetes.io/part-of: multi-app
+
+# END GENAI

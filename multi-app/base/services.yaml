@@ -1,0 +1,24 @@
+# START GENAI
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  selector:
+    app.kubernetes.io/name: frontend
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  selector:
+    app.kubernetes.io/name: backend
+  ports:
+  - port: 8000
+    targetPort: 8000
+
+# END GENAI

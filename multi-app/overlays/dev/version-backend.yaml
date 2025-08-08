@@ -1,0 +1,19 @@
+# START GENAI
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/version: v2.3.0
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app.kubernetes.io/version: v1.26.0
+
+# END GENAI

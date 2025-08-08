@@ -1,0 +1,21 @@
+# START GENAI
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: multi-app-dev
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/stdedwin-git/poc-version-trace
+    targetRevision: main
+    path: multi-app/overlays/dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+# END GENAI

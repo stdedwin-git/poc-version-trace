@@ -1,0 +1,20 @@
+# START GENAI
+resources:
+  - ../../base
+
+# Imagen + tag (se parchea automáticamente)
+images:
+  - name: nginx
+    newTag: 1.26     # => frontend: nginx:1.26
+  - name: python
+    newTag: "3.11-alpine"  # backend
+  - name: postgres
+    newTag: 15.4-alpine    # db
+
+# Parches de labels para que Prometheus exponga la versión
+patchesStrategicMerge:
+  - version-frontend.yaml
+  - version-backend.yaml
+  - version-db.yaml
+
+# END GENAI

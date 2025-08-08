@@ -1,0 +1,19 @@
+# START GENAI
+grafana:
+  service:
+    type: NodePort
+    nodePort: 30000
+    port: 80
+  adminPassword: admin
+  defaultDashboardsEnabled: false
+
+prometheus-node-exporter:
+  enabled: false            # opcional, para Docker Desktop
+
+kube-state-metrics:
+  metricAllowlist:          # ← ¡nuevo!
+    - kube_deployment_labels
+  metricLabelsAllowlist:    # ← ya lo tenías
+    - deployments=[app.kubernetes.io/version,app.kubernetes.io/name]
+
+# END GENAI
