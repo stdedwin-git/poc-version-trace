@@ -7,7 +7,7 @@ images:
   - name: nginx
     newTag: 1.26     # => frontend: nginx:1.26
   - name: python
-    newTag: "3.11-alpine"  # backend
+    newTag: 3.11-alpine  # backend
   - name: postgres
     newTag: 15.4-alpine    # db
 
