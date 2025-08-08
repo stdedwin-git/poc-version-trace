@@ -5,11 +5,11 @@ resources:
 # Imagen + tag (se parchea automáticamente)
 images:
   - name: nginx
-    newTag: 1.26     # => frontend: nginx:1.26
+    newTag: "1.26"     # => frontend: nginx:1.26
   - name: python
-    newTag: 3.11-alpine  # backend
+    newTag: "3.11-alpine"  # backend
   - name: postgres
-    newTag: 15.4-alpine    # db
+    newTag: "15.4-alpine"    # db
 
 # Parches de labels para que Prometheus exponga la versión
 patchesStrategicMerge:
