@@ -2,19 +2,19 @@
 resources:
   - ../../base
 
-# Imagen + tag (se parchea automáticamente)
+# Cambiar imágenes y tags
 images:
   - name: nginx
-    newTag: "1.26"     # => frontend: nginx:1.26
+    newTag: "1.26"
   - name: python
-    newTag: "3.11-alpine"  # backend
+    newTag: "3.11-alpine"
   - name: postgres
-    newTag: "15.4-alpine"    # db
+    newTag: "15.4-alpine"
 
-# Parches de labels para que Prometheus exponga la versión
-patchesStrategicMerge:
-  - version-frontend.yaml
-  - version-backend.yaml
-  - version-db.yaml
+# Añadir/actualizar el label de versión
+patches:
+  - path: version-frontend.yaml
+  - path: version-backend.yaml
+  - path: version-db.yaml
 
 # END GENAI
